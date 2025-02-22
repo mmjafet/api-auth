@@ -1,12 +1,13 @@
-const {getAllUsers, login} = require("../Service/authService");
+const {getAllUsers, login, createUser} = require("../Service/authService");
 
-const getUsers = (req,res)=>{
-    res.json(getAllUsers());
+const getUsers = async (req,res)=>{
+    const users = await getAllUsers(); 
+    res.json(users);
 }
 
-const loginController = (req,res)=>{
+const loginController = async (req,res)=>{
     const {username,password} = req.body;
-    const respuesta = login(username,password);
+    const respuesta = await login(username,password);
     const {token} = respuesta;
     const {message} = respuesta;
 
@@ -16,4 +17,15 @@ const loginController = (req,res)=>{
         res.status(401).json({message});
 }
 
-module.exports = {getUsers,loginController}
+
+const createUserController = async (req,res)=>{
+    const {username,password} = req.body;
+    const newUser = await createUser(username,password);
+    if (newUser){
+        res.status(201).json(newUser);
+    }else{
+        res.status(500).json({message:"DB not connected"})
+    }
+}
+
+module.exports = {getUsers,loginController,createUserController}
