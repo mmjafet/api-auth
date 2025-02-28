@@ -1,6 +1,6 @@
 const express = require("express");
 const authRouter = require("./routes/authRoutes");
-const greetRouter = require("./routes/greetRoutes");
+
 const cors = require("cors");
 const { connectDB } = require("./data/config");
 const PORT = 3000;
