@@ -12,8 +12,8 @@ app.use(express.json());
 
 connectDB();
 
-app.use("/auth",authRouter);
-app.use("/greet",greetRouter);
+app.use("/",authRouter);
+//app.use("/greet",greetRouter);
 
 app.listen(PORT,()=>{
     console.log("Server running in http://localhost:"+PORT)
