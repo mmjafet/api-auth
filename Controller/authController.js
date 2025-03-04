@@ -22,7 +22,7 @@ const signupController = async (req, res) => {
     );
     try {
         const respuesta = await signup(username, password);
-        //console.log(respuesta);
+        
         if (respuesta.status === 201) {
            
             res.status(respuesta.status).json(respuesta);
