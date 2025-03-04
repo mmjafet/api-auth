@@ -24,7 +24,7 @@ const signupController = async (req, res) => {
         const respuesta = await signup(username, password);
         //console.log(respuesta);
         if (respuesta.status === 201) {
-            console.log(respuesta);
+           // console.log(respuesta);
             res.status(respuesta.status).json(respuesta);
         } else {
             res.status(500).json({ message: "Error interno del servidor23" });
