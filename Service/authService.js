@@ -41,7 +41,7 @@ const signup = async (username, password) => {
     const URL_USERs = 'http://localhost:3003/Us/users/';
     try {
         const response = await fetch(URL_USERs, {
-            method: 'POST', // Corregido de 'mothod' a 'method'
+            method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -54,15 +54,16 @@ const signup = async (username, password) => {
                 message: "Usuario creado"
             }
         } else {
+            const errorResponse = await response.json();
             return {
                 status: 500,
-                message: "Error al crear usuario"
+                message: `Error al crear usuario: ${errorResponse.message || response.statusText}`
             }
         }
     } catch (error) {
         return {
             status: 500,
-            message: error.message
+            message: `Fetch failed: ${error.message}`
         }
     }
 }
