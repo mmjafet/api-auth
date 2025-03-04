@@ -24,6 +24,7 @@ const signupController = async (req, res) => {
             res.status(respuesta.status).json(respuesta);
         } else {
             res.status(500).json({ message: "Error interno del servidor23" });
+            console.log(respuesta);
         }
     } catch (error) {
         res.status(500).json({ message: error.message });
