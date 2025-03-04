@@ -2,8 +2,7 @@ const { login, signup } = require("../Service/authService");
 
 const loginController = async (req, res) => {
     const { username, password } = req.body;
-    //console.log(username, password);
-    try {
+  
         const respuesta = await login(username, password);
         
         if (respuesta.status === 200) {
