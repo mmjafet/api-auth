@@ -39,8 +39,7 @@ const login = async (username,password)=>{
 }
 const signup = async (username, password) => {
     const URL_USERs = 'http://localhost:3003/Us/users/';
-    console.log(username
-        ,password);
+   //console.log(username,password);
     try {
         const response = await fetch(URL_USERs, {
             method: 'POST',
@@ -59,7 +58,7 @@ const signup = async (username, password) => {
             const errorResponse = await response.json();
             return {
                 status: 500,
-                message: `Error al crear usuario: ${errorResponse.message || response.statusText}`
+                message: `Error al crear usuario: }`
             }
         }
     } catch (error) {
