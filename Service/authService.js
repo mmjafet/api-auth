@@ -37,44 +37,34 @@ const login = async (username,password)=>{
     }
 
 }
-const signup = async (username,password)=>{
+const signup = async (username, password) => {
     const URL_USERs = 'http://localhost:3003/Us/users/';
-    //console.log(response)
     try {
-        const respose = await fetch(URL_USERs,{
-            mothod:'POST',
-            headers:{
-                'Content-Type':'application/json'
+        const response = await fetch(URL_USERs, {
+            method: 'POST', // Corregido de 'mothod' a 'method'
+            headers: {
+                'Content-Type': 'application/json'
             },
-            body:JSON.stringify({username,password})
+            body: JSON.stringify({ username, password })
         });
-        console.log(respose);
-        if (respose.status === 201) {
+        console.log(response);
+        if (response.status === 201) {
             return {
-                status:201,
-                message:"Usuario creado"
+                status: 201,
+                message: "Usuario creado"
             }
-        }else{
+        } else {
             return {
-                status:500,
-                message:"Error al crear usuario"
-
+                status: 500,
+                message: "Error al crear usuario"
             }
         }
-
-        
     } catch (error) {
         return {
-            status:500,
+            status: 500,
             message: error.message
         }
-        
-        
     }
-
-
-
-
 }
 
 module.exports = {
