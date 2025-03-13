@@ -37,7 +37,9 @@ const login = async (username,password)=>{
     }
 
 }
-
+const signup = async (username, password) => {
+    const URL_USERs = 'http://localhost:3003/Us/users/';
+   //console.log(username,password);
     try {
         const response = await fetch(URL_USERs, {
             method: 'POST',
