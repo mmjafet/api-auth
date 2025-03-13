@@ -25,15 +25,7 @@ const signupController = async (req, res) => {
         
         if (respuesta.status === 201) {
            
-            res.status(respuesta.status).json(respuesta);
-        } else {
-            res.status(500).json({ message: "Error interno del servidor23" });
-           
-        }
-    } catch (error) {
-        res.status(500).json({ message: error.message });
-    }
-}
+
 
 module.exports = {
     loginController,
