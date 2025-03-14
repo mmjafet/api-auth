@@ -61,7 +61,8 @@ const signup = async (username, password) => {
             const errorResponse = await response.json();
             return {
                 status: 500,
-                message: `Error al crear usuario: ${errorResponse.message}`
+                message: `Error al crear usuario: ${errorResponse.message}`,
+                message: "No pos no compa"
             }
         }
     } catch (error) {
