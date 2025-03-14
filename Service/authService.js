@@ -1,7 +1,7 @@
 const { response } = require("express");
 
 const login = async (username,password)=>{
-    const URL_USER = ;
+    const URL_USER = 'http://localhost:3003/Us/users/name/';
     try {
         const respose = await fetch(URL_USER + username );
       
@@ -12,7 +12,8 @@ const login = async (username,password)=>{
                 console.log(users.username);
                 return {
                     status:200,
-                    token:"token-falso"+username._id
+                    token:"token-falso"+username._id,
+                    message:"Usuario logeado"
                 }
             }else{
                 return {
