@@ -61,7 +61,7 @@ const signup = async (username, password) => {
             const errorResponse = await response.json();
             return {
                 status: 500,
-                message: `Error al crear usuario: }`
+                message: `Error al crear usuario: ${errorResponse.message}`
             }
         }
     } catch (error) {
