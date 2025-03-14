@@ -26,7 +26,8 @@ const login = async (username,password)=>{
         }else{
             return {
                 status:404,
-                message:"Usuario o contraseña incorrecta"
+                message:"Usuario o contraseña incorrecta",
+                message: "Usuario no encontrado"
             }
         }
     }
