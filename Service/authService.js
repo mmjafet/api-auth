@@ -18,7 +18,8 @@ const login = async (username,password)=>{
             }else{
                 return {
                     status:403,
-                    message:"Usuario o contraseña incorrecta"
+                    message:"Usuario o contraseña incorrecta",
+                    console.log(response.username)
                 }
             }
               
